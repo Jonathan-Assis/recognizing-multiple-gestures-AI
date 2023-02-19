@@ -1,4 +1,4 @@
-
+import { gestures } from "./gestures.js"
 
 const config = {
     video: { width: 640, height: 480, fps: 30 }
@@ -15,7 +15,10 @@ const config = {
 
   const gestureStrings = {
     'thumbs_up': '👍',
-    'victory': '✌🏻'
+    'victory': '✌️',
+    'rock': '✊️',
+    'paper': '🖐',
+    'scissors': '✌️'
   }
 
   async function createDetector() {
@@ -44,7 +47,8 @@ const config = {
     // add "✌🏻" and "👍" as sample gestures
     const knownGestures = [
       fp.Gestures.VictoryGesture,
-      fp.Gestures.ThumbsUpGesture
+      fp.Gestures.ThumbsUpGesture,
+      ...gestures
     ]
     const GE = new fp.GestureEstimator(knownGestures)
     // load handpose model
@@ -71,7 +75,8 @@ const config = {
           drawPoint(ctx, keypoint.x, keypoint.y, 3, color)
         }
 
-        const est = GE.estimate(hand.keypoints3D, 9)
+        const keypoints3D = hand.keypoints3D.map(keypoint => [keypoint.x, keypoint.y, keypoint.z])
+        const est = GE.estimate(keypoints3D, 9)
         if (est.gestures.length > 0) {
 
           // find gesture with highest match score
