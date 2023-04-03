@@ -1,9 +1,9 @@
-# Recognition multiple gestures 📽️🤷 [![](https://img.shields.io/badge/TensorFlow-FF6F00?style=for-the-badge&logo=tensorflow&logoColor=white)](https://github.com/tensorflow/tfjs-models/tree/master/hand-pose-detection)
+# Recognition multiple gestures 📽️🤷 [![](https://img.shields.io/badge/TensorFlow-FF6F00?style=for-the-badge&logo=tensorflow&logoColor=white)](https://github.com/tensorflow/tfjs-models/tree/master/hand-pose-detection) <br id="top">
 
 Finger gesture classifier for multiple hand landmarks detected by <a href="https://github.com/tensorflow/tfjs-models/tree/master/hand-pose-detection">MediaPipe Handpose Detection</a>. It detects gestures like "Victory" ✌️ or "Thumbs Up" 👍 from both individual hands inside a source video stream.
 
-# Summary <br id="top">
-- [installation](#installation)
+# Summary 
+- [Installation](#installation)
 - [Demo](#demo)
 - [Configuring the gestures](#config)
 - - [Guide of fingers](#guide)
