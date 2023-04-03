@@ -1,5 +1,7 @@
+// Get the FigerPose variable from the window
 const { GestureDescription, Finger, FingerCurl, FingerDirection } = window.fp;
-  
+
+// Define the gesture variable
 const rockGesture = new GestureDescription('rock'); // ✊️
 const paperGesture = new GestureDescription('paper'); // 🖐
 const scissorsGesture = new GestureDescription('scissors'); // ✌️
@@ -58,6 +60,7 @@ for(const finger of Finger.all) {
     dontGesture.addDirection(finger, FingerDirection.HorizontalLeft, 1.0);
 }
 
+// group the gestures already configured, that will be exported and used
 const gestures = [
     rockGesture, paperGesture, scissorsGesture, dontGesture
 ]
